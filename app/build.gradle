@@ -2,15 +2,17 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "me.dio.simulator"
         minSdk 21
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -50,6 +52,11 @@ dependencies {
     // Glide (Image Loading): https://github.com/bumptech/glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // Firebase Dependencies: https://firebase.google.com/docs/android/setup?hl=pt-br
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
     testImplementation 'junit:junit:4.13.2'
 
